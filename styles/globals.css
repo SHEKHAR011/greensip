@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 108 38% 97%;
+    --foreground: 132 24% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 132 24% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 132 24% 14%;
+    --primary: 132 30% 24%;
+    --primary-foreground: 96 46% 96%;
+    --secondary: 102 34% 92%;
+    --secondary-foreground: 132 30% 24%;
+    --muted: 102 28% 93%;
+    --muted-foreground: 128 16% 38%;
+    --accent: 100 36% 90%;
+    --accent-foreground: 132 30% 24%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 108 22% 84%;
+    --input: 108 22% 84%;
+    --ring: 132 30% 24%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 136 22% 8%;
+    --foreground: 96 30% 95%;
+    --card: 136 22% 10%;
+    --card-foreground: 96 30% 95%;
+    --popover: 136 22% 10%;
+    --popover-foreground: 96 30% 95%;
+    --primary: 96 34% 83%;
+    --primary-foreground: 132 30% 16%;
+    --secondary: 135 18% 16%;
+    --secondary-foreground: 96 30% 95%;
+    --muted: 135 18% 16%;
+    --muted-foreground: 110 14% 70%;
+    --accent: 132 18% 18%;
+    --accent-foreground: 96 30% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 136 14% 22%;
+    --input: 136 14% 22%;
+    --ring: 96 34% 83%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+}
+
+.logo-cloud-container {
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    hsl(var(--background)) 30%,
+    hsl(var(--background)) 70%,
+    transparent 100%
+  );
+}
+
+.logo-cloud {
+  display: flex;
+  width: calc(200% + 10px); /* Adjust based on the number of logos */
+  animation: scroll 10s linear infinite;
+}
+
+.logo-cloud::before,
+.logo-cloud::after {
+  content: '';
+  position: absolute;
+  width: 15%;
+  height: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.size-full {
+  width: 100%;
+  height: auto;
+}
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.small-square {
+  width: 10px;
+  height: 10px;
+  background-color: black; /* or any color you prefer */
+  margin-top: 5px; /* Adjust spacing as needed */
+}

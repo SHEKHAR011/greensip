@@ -1,0 +1,16 @@
+{
+  "title": "How to Make Matcha",
+  "root": true,
+  "pages": [
+    "index",
+    "quick-start",
+    "---Tools and Ingredients---",
+    "...configure",
+    "---Brewing Technique---",
+    "storage/setting-up",
+    "storage/example",
+    "---Serving and Variations---",
+    "trpc/setup",
+    "trpc/example"
+  ]
+}
