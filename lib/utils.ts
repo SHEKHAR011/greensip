@@ -1,8 +1,6 @@
 import { ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-import { env } from '@/env.mjs';
-
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -17,7 +15,22 @@ export function formatDate(input: string | number): string {
 }
 
 export function absoluteUrl(path: string) {
-  return `${env.NEXT_PUBLIC_APP_URL}${path}`;
+  const baseUrl =
+    process?.env?.NEXT_PUBLIC_APP_URL ??
+    process?.env?.NEXT_PUBLIC_VERCEL_URL ??
+    '';
+
+  if (!baseUrl) {
+    return path;
+  }
+
+  const normalizedBase = baseUrl.includes('http') ? baseUrl : `https://${baseUrl}`;
+  const trimmedBase = normalizedBase.endsWith('/')
+    ? normalizedBase.slice(0, -1)
+    : normalizedBase;
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+
+  return `${trimmedBase}${normalizedPath}`;
 }
 export const getURL = () => {
   let url =
