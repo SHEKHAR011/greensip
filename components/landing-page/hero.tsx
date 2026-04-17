@@ -39,8 +39,13 @@ export default function HeroSection() {
           refresh
         />
         <Ripple />
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="relative h-[300px] w-[160px] rotate-[-12deg] opacity-90 md:h-[430px] md:w-[220px]">
+      </div>
+      <div className="container px-4 py-8 mx-auto md:py-10 lg:py-14">
+        <div className="relative z-10 flex max-w-[64rem] flex-col items-center gap-3 text-center mx-auto">
+          <h1 className="text-2xl font-bold tracking-tight font-heading sm:text-4xl md:text-5xl lg:text-6xl">
+            Premium Canned Matcha Crafted For Everyday Energy
+          </h1>
+          <div className="pointer-events-none relative h-[220px] w-[118px] rotate-[-12deg] opacity-90 md:h-[320px] md:w-[168px]">
             <svg
               viewBox="0 0 220 430"
               className="h-full w-full drop-shadow-[0_26px_60px_rgba(45,78,38,0.32)]"
@@ -86,18 +91,11 @@ export default function HeroSection() {
               </text>
             </svg>
           </div>
-        </div>
-      </div>
-      <div className="container px-4 py-12 mx-auto md:py-16 lg:py-32">
-        <div className="relative z-10 flex max-w-[64rem] flex-col items-center gap-4 text-center mx-auto">
-          <h1 className="text-2xl font-bold tracking-tight font-heading sm:text-4xl md:text-5xl lg:text-6xl">
-            Premium Canned Matcha Crafted For Everyday Energy
-          </h1>
-          <div className="max-w-[42rem] font-bold tracking-tight text-primary sm:text-xl sm:leading-8 rounded-full p-2">
+          <div className="-mt-6 max-w-[42rem] rounded-full p-2 font-bold tracking-tight text-primary sm:text-xl sm:leading-8 md:-mt-7">
             Discover ceremonial-grade matcha in ready-to-drink cans. Balanced flavor,
             clean ingredients, and vibrant focus in every sip.
           </div>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 -mt-5">
             <Link href="/how-to-make" className={cn(buttonVariants({ size: 'xl' }), 'rounded-full border-2 border-primary dark:border-white text-bold text-white')}>
               Brewing Guide
             </Link>
