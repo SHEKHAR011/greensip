@@ -18,7 +18,10 @@ export default function Features() {
       </div>
       <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
         {features.map((feature) => (
-          <div className="relative p-2 overflow-hidden border rounded-lg bg-background">
+          <div
+            key={feature.title}
+            className="relative p-2 overflow-hidden border rounded-lg bg-background"
+          >
             <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
               <svg
                 viewBox="0 0 24 24"
