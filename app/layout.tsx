@@ -79,7 +79,24 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        <script
+          async
+          src="https://stats.shekhar3201.workers.dev/tg/script.js?id=G-4GB6NQWV29"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-4GB6NQWV29', {
+                transport_url: 'https://stats.shekhar3201.workers.dev/an',
+              });
+            `
+          }}
+        />
+      </head>
       <body
         className={cn(
           'min-h-screen bg-background font-mono antialiased',
