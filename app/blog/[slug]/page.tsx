@@ -80,7 +80,8 @@ export function generateMetadata({ params }: { params: Param }): Metadata {
   return createMetadata({
     title: page.data.title,
     description:
-      page.data.description ?? 'The library for building documentation sites',
+      page.data.description ??
+      'GreenSip matcha journal with brewing guides, tasting notes, and cafe-inspired recipes.',
     alternates: {
       canonical
     },

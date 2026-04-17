@@ -54,19 +54,22 @@ export const metadata: Metadata = {
     }
   },
   keywords: [
-    'Next.js',
-    'React',
-    'Tailwind CSS',
-    'Server Components',
-    'Radix UI'
+    'GreenSip',
+    'matcha',
+    'ceremonial matcha',
+    'matcha tea',
+    'matcha recipes',
+    'matcha brewing guide',
+    'Japanese green tea',
+    'tea rituals'
   ],
   authors: [
     {
-      name: 'antoineross',
-      url: 'https://antoineross.com'
+      name: 'GreenSip',
+      url: siteConfig.url
     }
   ],
-  creator: 'antoineross',
+  creator: 'GreenSip',
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -80,7 +83,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/og.jpg`],
-    creator: '@antoineross'
+    creator: '@greensip'
   },
   icons: {
     icon: '/favicon.svg',
