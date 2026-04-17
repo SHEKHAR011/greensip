@@ -19,14 +19,15 @@ export default function HeroSection() {
   ];
 
   const [currentQuote, setCurrentQuote] = useState(0)
+  const canRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentQuote((prevQuote) => (prevQuote + 1) % quotes.length)
-    }, 5000) // Change quote every 5 seconds
+    }, 5000)
 
     return () => clearInterval(intervalId)
-  }, [])
+  }, [quotes.length])
 
   return (
     <section className="relative w-full overflow-hidden">
@@ -45,10 +46,13 @@ export default function HeroSection() {
           <h1 className="text-2xl font-bold tracking-tight font-heading sm:text-4xl md:text-5xl lg:text-6xl">
             Premium Canned Matcha Crafted For Everyday Energy
           </h1>
-          <div className="pointer-events-none relative h-[220px] w-[118px] rotate-[-12deg] opacity-90 md:h-[320px] md:w-[168px]">
+          <div
+            ref={canRef}
+            className="group relative h-[220px] w-[118px] md:h-[320px] md:w-[168px] z-20 cursor-pointer floating-can"
+          >
             <svg
               viewBox="0 0 220 430"
-              className="h-full w-full drop-shadow-[0_26px_60px_rgba(45,78,38,0.32)]"
+              className="h-full w-full opacity-95 transition-all duration-700 ease-in-out group-hover:scale-110 group-hover:opacity-100 filter drop-shadow-[0_20px_45px_rgba(45,78,38,0.25)] group-hover:drop-shadow-[0_30px_60px_rgba(45,78,38,0.45)] hover-jelly-pop"
               aria-hidden="true"
             >
               <defs>
@@ -69,6 +73,7 @@ export default function HeroSection() {
               </defs>
 
               <rect x="46" y="42" width="128" height="334" rx="60" fill="url(#canBody)" stroke="rgba(41,73,34,0.28)" strokeWidth="2" />
+              
               <ellipse cx="110" cy="42" rx="64" ry="16" fill="url(#canMetal)" stroke="rgba(80,90,80,0.35)" strokeWidth="2" />
               <ellipse cx="110" cy="376" rx="64" ry="14" fill="rgba(68,110,55,0.45)" />
 
@@ -108,6 +113,30 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .floating-can {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+          0% { transform: translateY(0px) rotate(-12deg); }
+          50% { transform: translateY(-16px) rotate(-9deg); }
+          100% { transform: translateY(0px) rotate(-12deg); }
+        }
+
+        .hover-jelly-pop:hover {
+          animation: jelly-pop 0.8s ease-in-out both;
+        }
+
+        @keyframes jelly-pop {
+          0% { transform: scale(1); }
+          30% { transform: scaleX(1.15) scaleY(0.85); }
+          50% { transform: scaleX(0.9) scaleY(1.1); }
+          75% { transform: scaleX(1.05) scaleY(0.95); }
+          90% { transform: scaleX(0.98) scaleY(1.02); }
+          100% { transform: scale(1.1); }
+        }
+      `}</style>
     </section>
   );
 }
