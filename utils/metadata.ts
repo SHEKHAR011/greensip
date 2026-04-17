@@ -1,4 +1,5 @@
 import type { Metadata } from 'next/types';
+import { siteConfig } from '@/config/site';
 
 export function createMetadata(override: Metadata): Metadata {
   return {
@@ -6,17 +7,20 @@ export function createMetadata(override: Metadata): Metadata {
     openGraph: {
       title: override.title ?? undefined,
       description: override.description ?? undefined,
-      url: 'https://fumadocs.vercel.app',
-      images: '/banner.png',
-      siteName: 'Fumadocs',
+      url:
+        typeof override.alternates?.canonical === 'string'
+          ? override.alternates.canonical
+          : siteConfig.url,
+      images: [siteConfig.ogImage],
+      siteName: siteConfig.name,
       ...override.openGraph
     },
     twitter: {
       card: 'summary_large_image',
-      creator: '@money_is_shark',
+      creator: siteConfig.links.twitter.split('/').pop(),
       title: override.title ?? undefined,
       description: override.description ?? undefined,
-      images: '/banner.png',
+      images: [siteConfig.ogImage],
       ...override.twitter
     }
   };

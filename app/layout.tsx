@@ -34,11 +34,25 @@ const fontHeading = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(getURL()),
+  alternates: {
+    canonical: '/'
+  },
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`
   },
   description: siteConfig.description,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1
+    }
+  },
   keywords: [
     'Next.js',
     'React',

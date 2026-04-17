@@ -37,8 +37,17 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
 
   if (page == null) notFound();
 
+  const canonical = page.url;
+
   return {
     title: page.data.title,
-    description: page.data.description
+    description: page.data.description,
+    alternates: {
+      canonical
+    },
+    openGraph: {
+      url: canonical,
+      type: 'article'
+    }
   } satisfies Metadata;
 }

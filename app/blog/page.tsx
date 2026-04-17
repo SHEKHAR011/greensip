@@ -1,5 +1,20 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { blog } from '@/utils/source';
+import { createMetadata } from '@/utils/metadata';
+
+export const metadata: Metadata = createMetadata({
+  title: 'Matcha Journal',
+  description:
+    'Brewing notes, flavor guides, and cafe-inspired ideas for everyday matcha rituals.',
+  alternates: {
+    canonical: '/journal'
+  },
+  openGraph: {
+    url: '/journal',
+    type: 'website'
+  }
+});
 
 function getPostDate(post: { data: Record<string, unknown>; file: { name: string } }): Date {
   const rawDate = post.data.date;

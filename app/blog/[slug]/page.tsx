@@ -75,10 +75,19 @@ export function generateMetadata({ params }: { params: Param }): Metadata {
 
   if (!page) notFound();
 
+  const canonical = `/journal/${params.slug}`;
+
   return createMetadata({
     title: page.data.title,
     description:
-      page.data.description ?? 'The library for building documentation sites'
+      page.data.description ?? 'The library for building documentation sites',
+    alternates: {
+      canonical
+    },
+    openGraph: {
+      url: canonical,
+      type: 'article'
+    }
   });
 }
 
