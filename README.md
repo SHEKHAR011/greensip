@@ -1,74 +1,59 @@
-# 🚀 Complete Next.js Subscription Starter Template
+# GreenSip
 
-The all-in-one starter kit for building high-performance SaaS applications using Next.js, TailwindCSS, and Supabase.
+## About The Brand
 
-> **Warning**: This app is a work in progress. I'm building this in public. Follow the progress on Twitter [@antoineross\_\_](https://twitter.com/antoineross__). Check out the features below.
+GreenSip is a lifestyle matcha brand built around one simple idea: make premium matcha easy to enjoy every day.
 
-## 🎉 Features
+The brand focuses on ceremonial-grade matcha in ready-to-drink cans, designed for people who want clean energy, balanced flavor, and a calmer alternative to sugar-heavy drinks.
 
-- 🔐 **Complete Auth Package**: Secure user management and authentication with [Supabase](https://supabase.io/docs/guides/auth)
-- 🛠️ **Data Management**: Powerful data access & management tooling on top of PostgreSQL with [Supabase](https://supabase.io/docs/guides/database)
-- 💳 **Stripe Integration**: Seamless integration with [Stripe Checkout](https://stripe.com/docs/payments/checkout) and the [Stripe customer portal](https://stripe.com/docs/billing/subscriptions/customer-portal)
-- 🌐 **Pricing & Subscriptions**: Automatic syncing of pricing plans and subscription statuses via [Stripe webhooks](https://stripe.com/docs/webhooks)
-- 🌈 **TailwindCSS & Tailwind UI**: Customized and flexible UI components with Tailwind UI
-- ⚛️ **React 18**: Enjoy the latest features and improvements with React 18
-- 📘 **TypeScript**: Strongly typed programming for better development experience
-- 🎨 **Shadcn/ui**: Beautiful and customizable UI components
-- 🔍 **Zod Validation**: Schema validation to keep your data safe and sound
-- 🧪 **Testing Tools**: Integrated unit and e2e testing with Jest, React Testing Library, and Playwright
-- 🧑‍💻 **Developer Experience**: ESLint, Prettier, Husky, and Commitlint for maintaining code quality and consistency
-- 📀 **Supabase storage** - Included are setting up policies, and handling image compression in the browser.
-- ⼬ **tRPC** - Included a guide on how to add a very lean trpc router for your api. You just need to add 3 folders, and 1 file.
-- ⚙️ **Local Development**: Develop locally with Supabase, Docker, and a set of custom commands
-- 📚 **Documentation & Blog**: Utilize MDX compiler from the open-source project Fumadocs for documentation and blog content.
+GreenSip positions itself at the intersection of wellness, convenience, and modern cafe culture.
 
-## 🎬 Demo
+## Brand Purpose
 
-[Live Demo](https://hikari.antoineross.com/)
+GreenSip exists to help people feel focused, refreshed, and intentional in their daily routine.
 
-**Hero Section:** ![Screenshot of demo](./public/hikari-landingpage.png)
+Instead of treating tea as occasional, the brand reimagines matcha as an everyday ritual that fits work, fitness, study, and creative life.
 
-**Dashboard View:** ![Screenshot of dashboard](./public/hikari-dashboard.png)
+## Brand Personality
 
-**Pricing Table:** ![Screenshot of pricing](./public/hikari-pricing.png)
+- Clean and minimal
+- Fresh and optimistic
+- Honest about ingredients and quality
+- Calm, confident, and modern
 
-**Documentation:** ![Screenshot of documentation](./public/hikari-documentation.png)
+## Target Audience
 
-**Blog:** ![Screenshot of blog](./public/hikari-blog.png)
+GreenSip is for health-conscious, design-aware, and fast-moving people who care about what they consume.
 
-## 📄 Quick Start Guide
+This includes students, professionals, creators, and wellness-focused consumers who want better energy without the crash.
 
-Get up and running quickly by following the [Quick Start Guide](https://hikari.antoineross.com/docs/quick-start).
+## Blog Purpose
 
-## 🚀 Going Live
+The GreenSip blog is the educational and storytelling arm of the brand.
 
-### **1. Archive Testing Products**
+It is designed to:
 
-Before going live, archive all test mode Stripe products. Switch Stripe from test mode to production mode and update your environment variables.
+- Teach readers about matcha, ingredients, and mindful routines
+- Share practical guides for daily wellness and tea culture
+- Build trust through transparent, useful, and high-quality content
+- Strengthen the brand community through stories, tips, and lifestyle insights
 
-### **2. Redeploy**
+In short, the blog is not only for traffic. It is for brand authority, customer trust, and long-term community growth.
 
-After updating environment variables, redeploy your application through Vercel.
+## Vision
 
-## 📚 Additional Features
+GreenSip's long-term vision is to become a globally recognized matcha lifestyle brand.
 
-- 📈 **Analytics Ready**: Easy integration with analytics tools like Google Analytics
-- 🌐 **I18n Support**: Built-in internationalization with Paraglide
-- 🔥 **Lighthouse Performance**: Achieve a perfect score with optimized performance, accessibility, and SEO
+The goal is to make premium tea culture more accessible while staying rooted in quality, simplicity, and intentional living.
 
-## 🤝 Contribution
+The brand aims to grow beyond products into a complete wellness ecosystem that includes education, community, and everyday rituals people genuinely value.
 
-To contribute:
+## Project Report Summary
 
-1. Fork the repository.
-2. Create a new branch.
-3. Make your changes and commit them.
-4. Push to the forked repository.
-5. Create a pull request.
+GreenSip is a premium canned matcha brand concept centered on clean energy and modern wellness.
 
-## ❤️ Support
+Its identity is built on minimal design, ingredient transparency, and a calm but aspirational tone.
 
-If you like the project, consider leaving a star. 🌟
-[![Star History Chart](https://api.star-history.com/svg?repos=antoineross/Hikari&type=Date)](https://star-history.com/#antoineross/Hikari&Date)
+The blog supports this identity by educating users, increasing credibility, and creating an ongoing relationship with the audience.
 
-Made by [Antoine Ross](https://antoineross.com).
+The overall vision is to scale GreenSip into a trusted lifestyle brand where product, content, and community work together to shape a better daily routine.
