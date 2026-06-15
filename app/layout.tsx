@@ -99,7 +99,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       <head>
         <script
           async
-          src="https://stats.shekhar.qzz.io/tg/script.js?id=G-Y4SSC0DB7S"
+          src="https://stats.shekhar.qzz.io/tggg/script.js?id=G-Y4SSC0DB7S"
         />
         <script
           dangerouslySetInnerHTML={{
@@ -108,7 +108,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-Y4SSC0DB7S', {
-                transport_url: 'https://stats.shekhar.qzz.io/an',
+                transport_url: 'https://stats.shekhar.qzz.io/angg',
               });
             `
           }}
