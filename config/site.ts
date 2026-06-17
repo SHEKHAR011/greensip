@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
   url: 'https://matcha.shekhar.qzz.io',
   ogImage: 'https://matcha.shekhar.qzz.io/og.jpg',
   links: {
-    twitter: 'https://twitter.com/greensip',
-    github: 'https://github.com/antoineross/hikari'
+    twitter: '',
+    github: ''
   }
 };
