@@ -11,6 +11,7 @@ interface Param {
   slug: string;
 }
 
+export const dynamic = 'force-dynamic';
 export const dynamicParams = false;
 
 export default function Page({
@@ -90,10 +91,4 @@ export function generateMetadata({ params }: { params: Param }): Metadata {
       type: 'article'
     }
   });
-}
-
-export async function generateStaticParams(): Promise<Param[]> {
-  return blog.getPages().map<Param>((page) => ({
-    slug: page.slugs[0]
-  }));
 }
