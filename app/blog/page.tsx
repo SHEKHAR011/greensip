@@ -3,8 +3,6 @@ import Link from 'next/link';
 import { blog } from '@/utils/source';
 import { createMetadata } from '@/utils/metadata';
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = createMetadata({
   title: 'Matcha Journal',
   description:

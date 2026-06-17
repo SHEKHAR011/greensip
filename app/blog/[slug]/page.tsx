@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import { blog } from '@/utils/source';
 import { createMetadata } from '@/utils/metadata';
+import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { Control } from './page.client';
 
@@ -11,8 +12,13 @@ interface Param {
   slug: string;
 }
 
-export const dynamic = 'force-dynamic';
 export const dynamicParams = false;
+
+export async function generateStaticParams(): Promise<Param[]> {
+  return blog.getPages().map<Param>((page) => ({
+    slug: page.slugs[0]
+  }));
+}
 
 export default function Page({
   params
@@ -23,8 +29,38 @@ export default function Page({
 
   if (!page) notFound();
 
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: page.data.title,
+    description: page.data.description,
+    author: {
+      '@type': 'Person',
+      name: page.data.author
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/og.jpg`
+      }
+    },
+    mainEntityOfPage: `${siteConfig.url}${page.url}`,
+    datePublished: new Date(page.data.date ?? page.file.name).toISOString(),
+    dateModified: new Date(page.data.date ?? page.file.name).toISOString(),
+    image: `${siteConfig.url}/og.jpg`
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData)
+        }}
+      />
       <div
         className="container rounded-xl border py-12 md:px-8"
         style={{
